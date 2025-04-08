@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One-to-One Chat | WebSocket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+
+
+<div class="container" id="login-page">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Join the Chat</h3>
+                </div>
+                <div class="card-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="chat-page" style="display: none;">
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Connected Users</h4>
+                </div>
+                <div class="card-body">
+                    <ul id="usersList" class="list-group">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Chat</h3>
+                    <span id="selectedUser">No user selected</span>
+                </div>
+                <div class="card-body">
+                    <div id="chat-messages" class="chat-container">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form id="messageForm">
+                        <div class="input-group">
+                            <input type="text" id="message" class="form-control" placeholder="Type your message here..." disabled>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit" id="sendButton" disabled>Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
