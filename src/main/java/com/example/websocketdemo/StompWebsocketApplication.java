@@ -8,5 +8,6 @@ public class StompWebsocketApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StompWebsocketApplication.class, args);
+		String i;
 	}
 }
